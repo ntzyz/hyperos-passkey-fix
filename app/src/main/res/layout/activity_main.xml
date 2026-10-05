@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HyperOS Passkey 服务"
+            android:textAppearance="?attr/textAppearanceHeadlineSmall" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="使用 Shizuku 将凭据服务写入 secure 设置。Shizuku 需要以无线调试、ADB 或 root 方式启动。"
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+        <EditText
+            android:id="@+id/component_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="凭据服务组件"
+            android:inputType="textUri"
+            android:singleLine="true"
+            android:text="com.onepassword.android/.autofill.services.CredentialManagerService" />
+
+        <Button
+            android:id="@+id/grant_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="授权 / 连接 Shizuku" />
+
+        <Button
+            android:id="@+id/apply_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="写入两个凭据服务设置" />
+
+        <Button
+            android:id="@+id/read_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="读取当前设置" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="#11000000"
+            android:fontFamily="monospace"
+            android:gravity="center_vertical"
+            android:lineSpacingExtra="3dp"
+            android:minHeight="96dp"
+            android:padding="16dp"
+            android:text="正在检查 Shizuku…"
+            android:textIsSelectable="true" />
+    </LinearLayout>
+</ScrollView>
